@@ -8,8 +8,10 @@
     --ocean-color: #404BBF;
 --header-border-color: #e7e9fc;
 --customers-link-color: #8E8F99; 
+--modal-color: #FCFCFC;
 --footer-hover-color:#31d0aa;
 --main-animation: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
 }
 body {
     color: var(--primary-text-color);
@@ -128,14 +130,39 @@ color: var(--ocean-color);
 /* modal */
 .backdrop {
     position: fixed;
-    display:block;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
+    background-color:rgba(46, 47, 66, 0.4);
+    
 
 }
 .backdrop.is-hidden {
-    opacity: 0;
+    opacity: 1;
     pointer-events: none;
+}
+.modal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 408px;
+    height: 584px;
+    border-radius: 4px;
+    background-color: var(--modal-color); 
+}
+.close-btn {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+
+
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: var(--header-border-color);
 }
 /* hero */
 .hero {

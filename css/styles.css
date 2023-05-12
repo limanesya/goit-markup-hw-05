@@ -592,7 +592,8 @@ cursor: pointer;
 }
 
 
-.portfolio-link:hover .thumb-text {
+.portfolio-link:hover .thumb-text,
+.portfolio-link:focus .thumb-text {
 transform: translateY(0%);
 opacity: 1;
 }

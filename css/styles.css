@@ -193,10 +193,10 @@ border: none;
 .close-icon {
 transition: fill var(--main-animation);
 }
-.close-icon:hover,
-.close-icon:focus {
+.close-btn:hover .close-icon {
 fill: var(--background-color);
 }
+
 
 /* Hero section */
 .hero {

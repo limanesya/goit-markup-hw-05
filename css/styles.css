@@ -132,30 +132,43 @@ color: var(--ocean-color);
     position: fixed;
     top: 0;
     left: 0;
+    
+    transition: opacity var(--main-animation), visibility var(--main-animation);
+
     width: 100%;
     height: 100%;
+    opacity: 1;
     background-color:rgba(46, 47, 66, 0.4);
     
-
 }
 .backdrop.is-hidden {
-    opacity: 1;
+    opacity: 0;
     pointer-events: none;
+    visibility: hidden;
 }
 .modal {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
+    transition: transform var(--main-animation);
     width: 408px;
     height: 584px;
     border-radius: 4px;
     background-color: var(--modal-color); 
 }
+.backdrop.is-hidden .modal {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-80%);
+}
 .close-btn {
     position: absolute;
     top: 24px;
     right: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 
     width: 24px;
@@ -164,7 +177,8 @@ color: var(--ocean-color);
     border: 1px solid rgba(0, 0, 0, 0.1);
     background-color: var(--header-border-color);
 }
-/* hero */
+
+/* Hero section */
 .hero {
     text-align: center;
     background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), url(../images/people-office.jpg);
@@ -198,7 +212,7 @@ color: var(--ocean-color);
 }
 
 .hero-btn {
-transition: background-color var(--main-animation);
+    transition: background-color var(--main-animation), box-shadow var(--main-animation);
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15); 
    display: block;
    border: 1px solid transparent;
@@ -399,6 +413,9 @@ display: flex;
     border-color: var(--ocean-color);
    
 }
+.customers-icon {
+    transition: fill var(--main-animation);
+}
 .customers-icon:hover,
 .customers-icon:focus {
     fill: var(--ocean-color);
@@ -525,7 +542,7 @@ cursor: pointer;
     margin-bottom: 72px;
 }
 .portfolio-btn {
-    transition: color var(--main-animation), box-shadow var(--main-animation), background-color var(--main-animation);
+    transition: color var(--main-animation), box-shadow var(--main-animation), background-color var(--main-animation), border var(--main-animation);
     padding: 12px 24px;
     border: 1px solid var(--header-border-color);
     border-radius: 4px;
@@ -551,16 +568,28 @@ cursor: pointer;
 }
 .portfolio-thumb {
     position: relative;
+    overflow: hidden;
 }
+
+
 .portfolio-overlay {
     position: absolute;
-    top: 0;
+    top:0;
     left: 0;
+    transform: translateY(100%);
+    transition: transform var(--main-animation), opacity var(--main-animation);
+    opacity: 0;
+    
 
     width: 100%;
     height: 100%;
     background-color: var(--accent-color);
 }
+.portfolio-thumb:hover .portfolio-overlay{
+transform: translateY(0);
+opacity: 1;
+}
+
 .thumb-text {
     position: absolute;
     width: 100%;

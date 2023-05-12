@@ -154,8 +154,11 @@ color: var(--ocean-color);
     transform: translateX(-50%) translateY(-50%);
     transition: transform var(--main-animation);
     width: 408px;
-    height: 584px;
+    min-height: 576px;
     border-radius: 4px;
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
     background-color: var(--modal-color); 
 }
 .backdrop.is-hidden .modal {
@@ -167,6 +170,10 @@ color: var(--ocean-color);
     top: 24px;
     right: 24px;
 
+    transition: background-color var(--main-animation), border var(--main-animation);
+    padding: 0;
+    cursor: pointer;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -177,6 +184,18 @@ color: var(--ocean-color);
     border-radius: 50%;
     border: 1px solid rgba(0, 0, 0, 0.1);
     background-color: var(--header-border-color);
+}
+.close-btn:hover,
+.close-btn:focus {
+background-color: var(--ocean-color);
+border: none;
+}
+.close-icon {
+transition: fill var(--main-animation);
+}
+.close-icon:hover,
+.close-icon:focus {
+fill: var(--background-color);
 }
 
 /* Hero section */
@@ -213,7 +232,7 @@ color: var(--ocean-color);
 }
 
 .hero-btn {
-    transition: background-color var(--main-animation), box-shadow var(--main-animation);
+    transition: background-color var(--main-animation);
 box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15); 
    display: block;
    border: 1px solid transparent;
@@ -399,7 +418,7 @@ display: flex;
     height: 88px;
 }
 .customers-link {
-    transition: border-color var(--main-animation);
+    transition: border-color var(--main-animation), color var(--main-animation);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -543,7 +562,7 @@ cursor: pointer;
     margin-bottom: 72px;
 }
 .portfolio-btn {
-    transition: color var(--main-animation), box-shadow var(--main-animation), background-color var(--main-animation), border var(--main-animation);
+    transition: color var(--main-animation), box-shadow var(--main-animation), background-color var(--main-animation), border-color var(--main-animation);
     padding: 12px 24px;
     border: 1px solid var(--header-border-color);
     border-radius: 4px;
@@ -602,6 +621,10 @@ opacity: 1;
     font-size: 16px;
     line-height: 24px;
     color: var(--background-color);
+}
+.thumb-text:hover,
+.thumb-text:focus {
+    transform: translateY(0%);
 }
 .portfolio-list {
     display: flex;
